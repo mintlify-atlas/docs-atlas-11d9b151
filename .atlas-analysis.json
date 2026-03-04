@@ -1,0 +1,112 @@
+{
+  "projectType": "saas",
+  "projectName": "Fynt",
+  "projectDescription": "Self-hostable workflow automation platform with visual node editor for building multi-step automations",
+  "theme": "aspen",
+  "primaryColor": "#f04d26",
+  "lightColor": "#ff6b47",
+  "darkColor": "#d63e1a",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "architecture"
+            ]
+          },
+          {
+            "group": "Deployment",
+            "pages": [
+              "deployment/docker",
+              "deployment/manual",
+              "deployment/configuration",
+              "deployment/modes"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/workflow-builder",
+              "features/node-types",
+              "features/credentials",
+              "features/executions"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/overview",
+              "integrations/ai-nodes",
+              "integrations/http",
+              "integrations/github",
+              "integrations/notion",
+              "integrations/discord",
+              "integrations/slack"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/creating-workflows",
+              "guides/triggers",
+              "guides/logic-and-control",
+              "guides/managing-credentials",
+              "guides/monitoring-runs"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "api/overview",
+              "api/authentication"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api/workflows",
+              "api/executions",
+              "api/credentials",
+              "api/webhooks"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Visual workflow builder with drag-and-drop node editor",
+    "Multiple trigger types: Manual, Webhook, and Cron scheduling",
+    "AI integrations with OpenAI, Anthropic, and Gemini",
+    "Integration nodes for GitHub, Notion, Slack, Discord",
+    "Real-time execution streaming via WebSockets",
+    "Encrypted credential storage with AES-256-GCM",
+    "Distributed job processing with BullMQ and Redis",
+    "Self-hostable with Docker or manual deployment",
+    "Conditional logic and data transformation nodes",
+    "Full monorepo architecture with Next.js frontend"
+  ],
+  "publicApiSurface": [
+    "POST /api/webhooks/[workflowId]/[nodeId] - Webhook ingestion endpoint",
+    "GET /api/executions/[runId]/stream - Server-sent events for execution streaming",
+    "GET /api/executions/[runId]/ws-token - WebSocket authentication token",
+    "POST /api/trpc/workflow.create - Create new workflow",
+    "POST /api/trpc/workflow.update - Update workflow configuration",
+    "POST /api/trpc/workflow.delete - Delete workflow",
+    "POST /api/trpc/execution.run - Execute workflow manually",
+    "GET /api/trpc/execution.list - List workflow runs",
+    "POST /api/trpc/credentials.create - Store encrypted credentials",
+    "GET /api/trpc/credentials.list - List user credentials",
+    "WebSocket ws://localhost:3101 - Real-time execution events"
+  ]
+}
